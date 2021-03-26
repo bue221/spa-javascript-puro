@@ -19,14 +19,19 @@ module.exports = {
             }
         }]
     },
+    devServer: {
+        historyApiFallback: true,
+        contentBase: './',
+        port: 3000 // <--- Add this line and choose your own port number
+      },
     plugins: [
-        new HtmlWebPackPlugin([
+        new HtmlWebPackPlugin(
             {
                 inject: true,
                 template: './public/index.html',
                 filename: './index.html',
             }
-        ])
+        )
     ]
 
 }

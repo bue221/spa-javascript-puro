@@ -9,7 +9,7 @@
             </h1>
         </div>
         <div class='Header-nav'>
-            <a href='#/about'>
+            <a href='/#about'>
                 About
             </a>
         </div>
