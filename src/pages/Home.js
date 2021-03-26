@@ -1,15 +1,24 @@
+import getData from "../utils/getData";
 
-export default () => {
-    const view = `
-    <div class='Characters'>
-     <arcticle class='Character-item'>
-        <a href='/#1/'>
-        <img src='image' alt='name' />
-        <h2>name</h2>
-        </a>
-     <article>
+export default async () => {
+  const characters = await getData();
+  // console.log(characters)
+
+  const view = `
+    <div class="Characters">
+    ${characters.results
+      .map(
+        (i) => `
+        <article class="Characters-item">
+           <a href="/#${i.id}/">
+           <img src="${i.image}" alt="${i.name}" />
+           <h2>${i.name}</h2>
+           </a>
+        </article>`
+      )
+      .join("")}
     </div>
     `;
 
-    return view;
-}
+  return view;
+};
